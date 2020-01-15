@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+{% if msg %}
+   <h1>{{ msg }}</h1>
+   {% endif %}
+
+   <h1>Upload new File</h1>
+
+   <form method=post enctype=multipart/form-data>
+     <p><input type=file name=file>
+        <input type="text" name="kw">
+        <input type=submit value=Upload>
+   </form>
+
+   <h1>Result:</h1>
+   {% if img_src %}
+     <img src="{{ img_src }}">
+   {% endif %}
+   {% if file %}
+   <h1>{{ file }}</h1>
+   {% endif %}
+
+   {% if extension %}
+   <h1>{{ extension }}</h1>
+   {% endif %}
+
+   {% if kw %}
+   <h1>{{ kw }}</h1>
+   {% endif %}
+
+  
+
+
+   {% if extracted_text %}
+     <p> The extracted text from the image above is: <b> {{ extracted_text }} </b></p>
+
+   {% else %}
+     The extracted text will be displayed here
+   {% endif %}
+    
+
+</body>
+
+</html>
